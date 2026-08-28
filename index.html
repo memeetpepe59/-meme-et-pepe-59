@@ -1,288 +1,738 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mémé et Pépé aux petits oignons</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --beige: #f4e4a6;
-            --vert: #a8c686;
-            --marron: #d4a76a;
-            --gris: #333;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--gris);
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: var(--beige);
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: var(--marron);
-            font-size: 2.2em;
-            margin: 0;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-        section {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--marron);
-            border-bottom: 2px solid var(--vert);
-            padding-bottom: 10px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--marron);
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            margin: 10px 5px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #b8955a;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-        }
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: var(--beige);
-        }
-        .service-icon {
-            font-size: 2em;
-            margin-right: 10px;
-        }
-        footer {
-            background-color: var(--beige);
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        .faq-item {
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-        .faq-question {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--marron);
-        }
-        .faq-answer {
-            display: none;
-            padding-top: 10px;
-        }
-        .form-container {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        textarea {
-            height: 150px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mémé et Pépé aux petits oignons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg-light: #F8F5EE;
+--bg-green-light: #E4ECE1;
+--green-dark: #2F4F39;
+--green-text: #3D5A45;
+--brown: #C06B3E;
+--brown-hover: #A5572E;
+--card-bg: #FAF8F3;
+--text-main: #333333;
+--white: #FFFFFF;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+background-color: var(--bg-light);
+color: var(--text-main);
+line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+background-color: var(--bg-light);
+padding: 1rem 5%;
+position: sticky;
+top: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+gap: 12px;
+text-decoration: none;
+}
+
+.logo-container img {
+width: 45px;
+height: 45px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.logo-text {
+font-weight: 800;
+color: var(--green-dark);
+font-size: 1.1rem;
+line-height: 1.2;
+}
+
+nav {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+nav a {
+text-decoration: none;
+color: var(--green-dark);
+font-weight: 600;
+font-size: 0.95rem;
+}
+
+.btn-whatsapp-nav {
+background-color: var(--brown);
+color: var(--white);
+padding: 10px 20px;
+border-radius: 25px;
+text-decoration: none;
+font-weight: 700;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+/* Sections Globales */
+section {
+padding: 4rem 5%;
+}
+
+.subtitle-tag {
+text-transform: uppercase;
+font-size: 0.8rem;
+font-weight: 800;
+letter-spacing: 1px;
+color: var(--brown);
+margin-bottom: 0.5rem;
+display: block;
+text-align: center;
+}
+
+.section-title {
+text-align: center;
+font-size: 2.2rem;
+color: var(--green-dark);
+font-weight: 800;
+margin-bottom: 1rem;
+}
+
+.section-desc {
+text-align: center;
+color: var(--green-text);
+max-width: 600px;
+margin: 0 auto 3rem auto;
+}
+
+/* Hero Section */
+.hero {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+align-items: center;
+padding-top: 2rem;
+}
+
+.hero-h1 {
+font-size: 2.6rem;
+color: var(--green-dark);
+font-weight: 800;
+line-height: 1.2;
+margin-bottom: 1.5rem;
+}
+
+.hero-h1 span {
+color: var(--brown);
+text-decoration: underline;
+}
+
+.hero-p {
+color: var(--green-text);
+font-size: 1.1rem;
+margin-bottom: 2rem;
+}
+
+.hero-buttons {
+display: flex;
+gap: 15px;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+background-color: var(--brown);
+color: var(--white);
+padding: 14px 24px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 700;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.btn-secondary {
+background-color: transparent;
+color: var(--green-dark);
+border: 2px solid var(--green-dark);
+padding: 12px 22px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 700;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.hero-info-list {
+list-style: none;
+color: var(--green-text);
+font-size: 0.95rem;
+}
+
+.hero-info-list li {
+margin-bottom: 0.5rem;
+}
+
+.hero-card {
+background: var(--white);
+padding: 2rem;
+border-radius: 24px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.hero-card img {
+width: 220px;
+height: 220px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 1rem;
+}
+
+/* Section Services */
+.banner-visite {
+background-color: var(--bg-green-light);
+border-radius: 20px;
+padding: 1.5rem 2rem;
+margin-bottom: 2rem;
+display: flex;
+gap: 15px;
+align-items: flex-start;
+}
+
+.banner-visite h3 {
+color: var(--green-dark);
+margin-bottom: 0.5rem;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+}
+
+.service-card {
+background-color: var(--card-bg);
+border-radius: 20px;
+padding: 2rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+}
+
+.service-card.disabled {
+background-color: var(--bg-green-light);
+border: 2px dashed var(--green-text);
+}
+
+.badge-soon {
+position: absolute;
+top: 15px;
+left: 15px;
+background: var(--brown);
+color: white;
+font-size: 0.75rem;
+font-weight: 800;
+padding: 4px 12px;
+border-radius: 12px;
+}
+
+.service-tag {
+font-size: 0.75rem;
+font-weight: 800;
+color: #999;
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+}
+
+.service-title {
+font-size: 1.4rem;
+color: var(--green-dark);
+margin-bottom: 1rem;
+}
+
+.service-list {
+list-style: none;
+margin: 1rem 0;
+color: var(--green-text);
+}
+
+.service-list li {
+margin-bottom: 0.5rem;
+}
+
+.price {
+font-size: 1.3rem;
+font-weight: 800;
+color: var(--brown);
+margin-top: 1rem;
+}
+
+.price-detail {
+font-size: 0.85rem;
+color: var(--green-text);
+font-weight: 600;
+}
+
+.tax-credit-notice {
+text-align: center;
+margin-top: 2rem;
+font-size: 0.95rem;
+color: var(--green-text);
+}
+
+/* Zone Section */
+.zone-section {
+background-color: var(--bg-green-light);
+text-align: center;
+}
+
+.city-pills {
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
+margin-top: 1.5rem;
+}
+
+.pill {
+background: var(--white);
+color: var(--green-dark);
+padding: 8px 18px;
+border-radius: 20px;
+font-weight: 700;
+font-size: 0.9rem;
+}
+
+/* How it works */
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+}
+
+.step-card {
+background: var(--card-bg);
+padding: 1.5rem;
+border-radius: 16px;
+}
+
+.step-num {
+font-size: 1.8rem;
+font-weight: 800;
+color: var(--green-text);
+opacity: 0.5;
+margin-bottom: 0.5rem;
+}
+
+.step-card h4 {
+color: var(--green-dark);
+margin-bottom: 0.5rem;
+}
+
+/* FAQ */
+.faq-section {
+background-color: var(--bg-green-light);
+}
+
+.faq-item {
+background: var(--white);
+border-radius: 16px;
+padding: 1.5rem;
+margin-bottom: 1rem;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.faq-item h4 {
+color: var(--green-dark);
+margin-bottom: 0.5rem;
+}
+
+/* About Section */
+.about-section {
+background-color: var(--green-dark);
+color: var(--white);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+align-items: center;
+}
+
+.about-section h2 {
+font-size: 2.2rem;
+margin-bottom: 1rem;
+}
+
+.quote-box {
+background: rgba(255,255,255,0.1);
+padding: 1.5rem;
+border-radius: 16px;
+border-left: 4px solid var(--brown);
+font-style: italic;
+}
+
+/* Reviews Section */
+.reviews-section {
+text-align: center;
+}
+
+/* Contact Section */
+.contact-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.contact-info-card {
+background: var(--brown);
+color: var(--white);
+padding: 2rem;
+border-radius: 20px;
+}
+
+.contact-info-card h3 {
+font-size: 1.6rem;
+margin-bottom: 1rem;
+}
+
+.contact-info-card a {
+color: var(--white);
+}
+
+.contact-form-card {
+background: var(--white);
+padding: 2rem;
+border-radius: 20px;
+}
+
+.form-group {
+margin-bottom: 1rem;
+}
+
+.form-group label {
+display: block;
+font-size: 0.85rem;
+font-weight: 700;
+color: var(--green-dark);
+margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 10px;
+background: #FDFBF7;
+font-family: inherit;
+}
+
+footer {
+text-align: center;
+padding: 2rem;
+background: var(--bg-light);
+border-top: 1px solid #E5E0D8;
+color: var(--green-text);
+font-size: 0.9rem;
+}
+
+footer a {
+color: var(--green-dark);
+font-weight: 700;
+text-decoration: none;
+}
+
+@media (max-width: 768px) {
+.hero, .about-section, .contact-container {
+grid-template-columns: 1fr;
+}
+nav { display: none; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <img src="assets/logo.png" alt="Logo Mémé et Pépé aux petits oignons" class="logo">
-        <h1>Mémé et Pépé aux petits oignons</h1>
-        <p>Lezennes & environs · 06 45 91 09 71 · <a href="mailto:memeetpepe59@gmail.com">memeetpepe59@gmail.com</a></p>
-    </header>
 
-    <div class="container">
-        <section id="accueil">
-            <h2>Accueil</h2>
-            <p>Une aide de proximité aux seniors — Lezennes & alentours</p>
-            <p>Les courses faites, la route assurée, un vrai coup de main au quotidien.</p>
-            <p>Je fais les courses de vos proches, avec ou sans eux, je les range dans le frigo, et je conduis vos aînés là où ils ont besoin d'aller. <strong>Simple, humain, sans prise de tête.</strong></p>
-            <p>
-                <a href="https://wa.me/33645910971" target="_blank" class="btn btn-whatsapp">💬 Écrire sur WhatsApp</a>
-                <a href="mailto:memeetpepe59@gmail.com" class="btn">✉️ Envoyer un email</a>
-            </p>
-        </section>
+<!-- Header -->
+<header>
+<a href="#" class="logo-container">
+<img src="assets/logo.png" alt="Logo Mémé et Pépé">
+<div class="logo-text">Mémé et Pépé<br><span style="font-weight:400; font-size:0.85rem;">aux petits oignons</span></div>
+</a>
+<nav>
+<a href="#services">Services</a>
+<a href="#zone">Zone</a>
+<a href="#comment-ca-marche">Comment ça marche</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+<a href="https://www.facebook.com/profile.php?id=61593229990750" target="_blank">Facebook</a>
+</nav>
+<a href="https://wa.me/33645910971" class="btn-whatsapp-nav" target="_blank">💬 WhatsApp</a>
+</header>
 
-        <section id="services">
-            <h2>Nos services</h2>
-            <div class="service">
-                <span class="service-icon">🛒</span>
-                <h3>Les courses</h3>
-                <p>Je fais les courses <strong>avec vous ou à votre place</strong>, selon ce qui vous convient.</p>
-                <ul>
-                    <li>Rangement dans le frigo inclus.</li>
-                    <li>Tarif : 22 €/heure + 0,50 – 0,80 €/km (trajet magasin).</li>
-                </ul>
-            </div>
-            <div class="service">
-                <span class="service-icon">🚗</span>
-                <h3>Transport</h3>
-                <p>Je vous accompagne <strong>où vous en avez besoin</strong> (rendez-vous médicaux, coiffeur, famille, courses lointaines).</p>
-                <ul>
-                    <li>Prise en charge à domicile et retour assuré.</li>
-                    <li>Tarif : 0,50 – 0,80 €/km.</li>
-                </ul>
-            </div>
-            <div class="service">
-                <span class="service-icon">🍲</span>
-                <h3>Repas à domicile <span style="color: var(--marron); font-size: 0.8em;">(Bientôt disponible !)</span></h3>
-                <p>Un bon petit plat maison préparé et servi chez vous.</p>
-                <ul>
-                    <li>Adaptés à vos goûts.</li>
-                    <li>Tarif : À venir.</li>
-                </ul>
-            </div>
-        </section>
+<!-- Hero Section -->
+<section class="hero">
+<div>
+<h1 class="hero-h1">Les courses faites, la route assurée, <span>un vrai coup de main</span> au quotidien.</h1>
+<p class="hero-p">Je fais les courses de vos proches, avec ou sans eux, je les range dans le frigo, et je conduis vos aînés là où ils ont besoin d'aller. Simple, humain, sans prise de tête.</p>
+<div class="hero-buttons">
+<a href="https://wa.me/33645910971" class="btn-primary" target="_blank">💬 Écrire sur WhatsApp</a>
+<a href="https://calendar.app.google/18DpsoKCNY5HNhXq7" class="btn-secondary" target="_blank">📅 Prendre RDV en ligne</a>
+</div>
+<ul class="hero-info-list">
+<li>• Basé à Lezennes</li>
+<li>• Intervention dans un rayon de 8 km</li>
+<li>• Du lundi au vendredi</li>
+</ul>
+</div>
+<div class="hero-card">
+<img src="assets/logo.png" alt="Illustration Mémé et Pépé">
+<p style="font-style: italic; color: var(--green-dark); font-weight: 700;">« Coup de main et coup de fourchette »</p>
+</div>
+</section>
 
-        <section id="tarifs">
-            <h2>Nos tarifs</h2>
-            <table>
-                <tr>
-                    <th>Service</th>
-                    <th>Tarif</th>
-                </tr>
-                <tr>
-                    <td>Courses</td>
-                    <td>22 €/heure + 0,50–0,80 €/km</td>
-                </tr>
-                <tr>
-                    <td>Transport</td>
-                    <td>0,50–0,80 €/km</td>
-                </tr>
-                <tr>
-                    <td>Repas à domicile</td>
-                    <td>Bientôt disponible</td>
-                </tr>
-            </table>
-            <p>✅ Ces services sont éligibles au <strong>crédit d'impôt de 50%</strong> (voir FAQ).</p>
-        </section>
+<!-- Services -->
+<section id="services">
+<span class="subtitle-tag">• Ce que je fais pour vous</span>
+<h2 class="section-title">Trois façons de vous simplifier la vie</h2>
+<p class="section-desc">Des services pensés pour le quotidien des personnes âgées, à leur rythme.</p>
 
-        <section id="faq">
-            <h2>Questions fréquentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">Est-ce que je paie moins cher grâce au crédit d'impôt ?</div>
-                <div class="faq-answer">
-                    Oui — les services à la personne comme les courses ou le transport ouvrent droit à un crédit d'impôt de 50% : concrètement, vous ne payez au final que la moitié du montant sur votre déclaration de revenus.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Y a-t-il un engagement ou un contrat sur la durée ?</div>
-                <div class="faq-answer">
-                    Non, aucun engagement. Vous pouvez annuler ou modifier vos rendez-vous à tout moment.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Comment se passe le paiement ?</div>
-                <div class="faq-answer">
-                    Le paiement se fait sur place (espèces, chèque) ou par virement bancaire.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Puis-je annuler ou déplacer un rendez-vous ?</div>
-                <div class="faq-answer">
-                    Oui, merci de nous prévenir au moins 24h à l'avance pour éviter des frais.
-                </div>
-            </div>
-        </section>
+<div class="banner-visite">
+<div style="font-size: 1.5rem;">📋</div>
+<div>
+<h3>Une première visite, pour bien vous connaître</h3>
+<p>Avant de commencer, on prend le temps d'un premier rendez-vous chez vous : vos habitudes, vos marques préférées, ce que vous aimez ou pas. Ça se fait en face à face, pour que je note bien vos préférences dès le départ.</p>
+</div>
+</div>
 
-        <section id="contact">
-            <h2>Contactez-nous</h2>
-            <p>Une envie, un besoin ? Écrivez-nous, nous répondons rapidement.</p>
-            <div class="form-container">
-                <form action="https://wa.me/33645910971" method="get" target="_blank">
-                    <input type="text" name="body" placeholder="Votre nom *" required>
-                    <input type="tel" name="body" placeholder="Votre téléphone *" required>
-                    <input type="email" name="body" placeholder="Votre email (optionnel)">
-                    <select name="body" required>
-                        <option value="" disabled selected>Service souhaité *</option>
-                        <option value="Courses">🛒 Courses</option>
-                        <option value="Transport">🚗 Transport</option>
-                        <option value="Repas">🍲 Repas à domicile</option>
-                    </select>
-                    <input type="date" name="body" required>
-                    <input type="time" name="body" required>
-                    <textarea name="body" placeholder="Votre demande (ex: 'J'ai besoin de courses pour 2 personnes')" required></textarea>
-                    <button type="submit" class="btn btn-whatsapp">Envoyer sur WhatsApp</button>
-                </form>
-            </div>
-            <p style="margin-top: 20px;">
-                <a href="https://wa.me/33645910971" target="_blank" class="btn btn-whatsapp">💬 Écrire sur WhatsApp</a>
-                <a href="mailto:memeetpepe59@gmail.com" class="btn">✉️ Envoyer un email</a>
-            </p>
-            <h3 style="margin-top: 30px;">Zone d'intervention</h3>
-            <p>Nous intervenons dans un <strong>rayon de 8 km autour de Lezennes</strong> :</p>
-            <ul>
-                <li>Lezennes</li>
-                <li>Lille</li>
-                <li>Hellemmes</li>
-                <li>Villeneuve-d'Ascq</li>
-                <li>Fâches-Thumesnil</li>
-                <li>et alentours</li>
-            </ul>
-            <p><strong>Horaires</strong> : Du lundi au vendredi (sur rendez-vous).</p>
-        </section>
-    </div>
+<div class="services-grid">
+<!-- Service 1 -->
+<div class="service-card">
+<div>
+<div class="service-tag">SERVICE 01</div>
+<h3 class="service-title">🛒 Les courses</h3>
+<p>Je fais les courses avec vous ou à votre place, selon ce qui vous convient le mieux.</p>
+<ul class="service-list">
+<li>— Avec vous, à votre rythme</li>
+<li>— Ou seul(e), sur votre liste</li>
+<li>— Rangement dans le frigo inclus</li>
+</ul>
+</div>
+<div>
+<div class="price">22 €/heure</div>
+<div class="price-detail">+ 0,50 – 0,80 €/km (trajet magasin)</div>
+</div>
+</div>
 
-    <footer>
-        <p>© 2026 Mémé et Pépé aux petits oignons</p>
-        <p><a href="#accueil" style="color: var(--marron);">Retour en haut</a></p>
-    </footer>
+<!-- Service 2 -->
+<div class="service-card">
+<div>
+<div class="service-tag">SERVICE 02</div>
+<h3 class="service-title">🚗 Transport</h3>
+<p>Rendez-vous médicaux, coiffeur, famille, courses lointaines : je vous conduis et vous dépose où vous en avez besoin.</p>
+<ul class="service-list">
+<li>— Prise en charge à domicile</li>
+<li>— Retour assuré</li>
+<li>— Dans un rayon de 8 km</li>
+</ul>
+</div>
+<div>
+<div class="price">18 €/heure</div>
+<div class="price-detail">+ 0,50 – 0,80 €/km</div>
+</div>
+</div>
 
-    <script>
-        // FAQ interactive
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                } else {
-                    answer.style.display = 'block';
-                }
-            });
-        });
-    </script>
+<!-- Service 3 -->
+<div class="service-card disabled">
+<div class="badge-soon">🚧 Pas encore disponible</div>
+<div>
+<div class="service-tag" style="margin-top: 20px;">SERVICE 03</div>
+<h3 class="service-title">🍲 Repas à domicile</h3>
+<p>Un bon petit plat maison préparé et servi chez vous. Ce service n'est pas encore lancé, il arrivera prochainement — restez à l'écoute !</p>
+<ul class="service-list">
+<li>— Repas faits maison</li>
+<li>— Adaptés à vos goûts</li>
+<li>— Arrive bientôt</li>
+</ul>
+</div>
+</div>
+</div>
+
+<p class="tax-credit-notice">💶 Ces services sont éligibles au crédit d'impôt de 50% — voir la <a href="#faq" style="color:var(--brown);">FAQ</a></p>
+</section>
+
+<!-- Zone -->
+<section id="zone" class="zone-section">
+<span class="subtitle-tag">• ZONE D'INTERVENTION</span>
+<h2 class="section-title">Une aide de proximité, tout autour de Lezennes</h2>
+<p class="section-desc">J'interviens dans un rayon d'environ 8 km autour de Lezennes — assez proche pour arriver vite, assez large pour couvrir tout le quartier.</p>
+<div class="city-pills">
+<span class="pill">Lezennes</span>
+<span class="pill">Lille</span>
+<span class="pill">Hellemmes</span>
+<span class="pill">Villeneuve-d'Ascq</span>
+<span class="pill">Faches-Thumesnil</span>
+<span class="pill">et alentours</span>
+</div>
+</section>
+
+<!-- How it works -->
+<section id="comment-ca-marche">
+<span class="subtitle-tag">• SIMPLE COMME BONJOUR</span>
+<h2 class="section-title">Comment ça marche</h2>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-num">1</div>
+<h4>Vous écrivez</h4>
+<p>Sur WhatsApp ou via le formulaire du site, en quelques mots.</p>
+</div>
+<div class="step-card">
+<div class="step-num">2</div>
+<h4>On en parle</h4>
+<p>On regarde ensemble ce dont vous avez besoin et quand.</p>
+</div>
+<div class="step-card">
+<div class="step-num">3</div>
+<h4>Je passe</h4>
+<p>Courses, trajet ou les deux — j'arrive à l'heure convenue.</p>
+</div>
+<div class="step-card">
+<div class="step-num">4</div>
+<h4>Tout est rangé</h4>
+<p>Les courses sont dans le frigo, vous n'avez rien à faire.</p>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+<span class="subtitle-tag">• VOS QUESTIONS</span>
+<h2 class="section-title">Questions fréquentes</h2>
+
+<div class="faq-item">
+<h4>Est-ce que je paie moins cher grâce au crédit d'impôt ?</h4>
+<p>Oui — les services à la personne comme les courses ou le transport ouvrent droit à un crédit d'impôt de 50% : concrètement, vous ne payez au final que la moitié du montant sur votre déclaration de revenus.</p>
+</div>
+
+<div class="faq-item">
+<h4>Y a-t-il un engagement ou un contrat sur la durée ?</h4>
+<p>Non, aucun engagement. Vous pouvez me solliciter ponctuellement ou régulièrement, selon vos besoins.</p>
+</div>
+
+<div class="faq-item">
+<h4>Comment se passe le paiement ?</h4>
+<p>Pour les courses, vous me remettez l'argent en espèces pour régler les achats eux-mêmes. Le règlement de la prestation (mon temps, le trajet) sera précisé avec vous.</p>
+</div>
+</section>
+
+<!-- About -->
+<section class="about-section">
+<div>
+<span class="subtitle-tag" style="color:#D5E2D0;">• QUI JE SUIS</span>
+<h2>Bonjour, moi c'est Lisa</h2>
+<p style="margin-bottom: 1rem;">J'ai créé Mémé et Pépé aux petits oignons parce que je crois que les petits gestes du quotidien — des courses bien faites, un trajet en toute sécurité — comptent énormément pour rester chez soi en toute sérénité.</p>
+<p>Je suis basée à Lezennes, et j'aime prendre le temps de bien connaître chaque personne que j'accompagne : ses habitudes, ses préférences, son rythme.</p>
+</div>
+<div class="quote-box">
+« Coup de main et coup de fourchette. »
+</div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews-section">
+<span class="subtitle-tag">• VOS RETOURS</span>
+<h2 class="section-title">Avis clients</h2>
+<p class="section-desc">Les avis sont directement laissés par les clients sur notre page Facebook — c'est rapide et ça compte beaucoup pour rassurer les prochains.</p>
+<a href="https://www.facebook.com/profile.php?id=61593229990750" class="btn-primary" target="_blank">🔥 Laisser un avis sur Facebook</a>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background-color: var(--bg-light);">
+<div class="contact-container">
+<div class="contact-info-card">
+<h3>Une envie, un besoin ?</h3>
+<p style="margin-bottom: 1.5rem;">Écrivez-moi, je réponds volontiers à toutes vos questions et vous rappelle si besoin.</p>
+
+<a href="https://wa.me/33645910971" class="btn-primary" style="background:rgba(255,255,255,0.2); width:100%; justify-content:center; margin-bottom:1.5rem;" target="_blank">💬 Écrire sur WhatsApp</a>
+<a href="mailto:memeetpepe59@gmail.com" class="btn-primary" style="background:rgba(255,255,255,0.2); width:100%; justify-content:center; margin-bottom:1.5rem;">✉️ Envoyer un email</a>
+
+<div style="font-size:0.9rem; line-height:1.8;">
+<p><strong>Numéro :</strong> 06 45 91 09 71</p>
+<p><strong>Email :</strong> memeetpepe59@gmail.com</p>
+<p><strong>Horaires :</strong> du lundi au vendredi</p>
+<p><strong>Zone :</strong> Lezennes et environs (8 km)</p>
+</div>
+</div>
+
+<div class="contact-form-card">
+<h3 style="color:var(--green-dark); margin-bottom:0.5rem;">Demander un devis / RDV</h3>
+<p style="font-size:0.85rem; color:var(--green-text); margin-bottom:1rem;">Laissez vos coordonnées ou planifiez directement un créneau.</p>
+
+<a href="https://calendar.app.google/18DpsoKCNY5HNhXq7" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:1.5rem;" target="_blank">📅 Réserver dans mon agenda</a>
+
+<form action="mailto:memeetpepe59@gmail.com" method="post" enctype="text/plain">
+<div class="form-group">
+<label>Votre nom</label>
+<input type="text" name="nom" required placeholder="Votre nom complet">
+</div>
+<div class="form-group">
+<label>Votre téléphone</label>
+<input type="tel" name="telephone" required placeholder="06 00 00 00 00">
+</div>
+<div class="form-group">
+<label>Votre commune</label>
+<input type="text" name="commune" placeholder="Lezennes, Lille...">
+</div>
+<div class="form-group">
+<label>De quoi avez-vous besoin ?</label>
+<select name="service">
+<option>Courses</option>
+<option>Transport</option>
+<option>Les deux</option>
+</select>
+</div>
+<div class="form-group">
+<label>Précisez votre demande</label>
+<textarea name="message" rows="3" placeholder="Ex : besoin de courses chaque mardi..."></textarea>
+</div>
+<button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Envoyer le message</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:0.5rem;">
+<img src="assets/logo.png" alt="Logo" style="width:30px; height:30px; border-radius:50%;">
+<strong>Mémé et Pépé aux petits oignons</strong>
+</div>
+<p>Lezennes & environs • 06 45 91 09 71 • memeetpepe59@gmail.com</p>
+<p style="margin-top:0.5rem;"><a href="https://www.facebook.com/profile.php?id=61593229990750" target="_blank">Suivez-nous sur Facebook</a></p>
+</footer>
+
 </body>
 </html>
