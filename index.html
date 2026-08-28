@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémé et Pépé aux petits oignons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #f4e4a6;
+            --vert: #a8c686;
+            --marron: #d4a76a;
+            --gris: #333;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--gris);
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: var(--beige);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: var(--marron);
+            font-size: 2.2em;
+            margin: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--marron);
+            border-bottom: 2px solid var(--vert);
+            padding-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--marron);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #b8955a;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: var(--beige);
+        }
+        .service-icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        footer {
+            background-color: var(--beige);
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--marron);
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo Mémé et Pépé aux petits oignons" class="logo">
+        <h1>Mémé et Pépé aux petits oignons</h1>
+        <p>Lezennes & environs · 06 45 91 09 71 · <a href="mailto:memeetpepe59@gmail.com">memeetpepe59@gmail.com</a></p>
+    </header>
+
+    <div class="container">
+        <section id="accueil">
+            <h2>Accueil</h2>
+            <p>Une aide de proximité aux seniors — Lezennes & alentours</p>
+            <p>Les courses faites, la route assurée, un vrai coup de main au quotidien.</p>
+            <p>Je fais les courses de vos proches, avec ou sans eux, je les range dans le frigo, et je conduis vos aînés là où ils ont besoin d'aller. <strong>Simple, humain, sans prise de tête.</strong></p>
+            <p>
+                <a href="https://wa.me/33645910971" target="_blank" class="btn btn-whatsapp">💬 Écrire sur WhatsApp</a>
+                <a href="mailto:memeetpepe59@gmail.com" class="btn">✉️ Envoyer un email</a>
+            </p>
+        </section>
+
+        <section id="services">
+            <h2>Nos services</h2>
+            <div class="service">
+                <span class="service-icon">🛒</span>
+                <h3>Les courses</h3>
+                <p>Je fais les courses <strong>avec vous ou à votre place</strong>, selon ce qui vous convient.</p>
+                <ul>
+                    <li>Rangement dans le frigo inclus.</li>
+                    <li>Tarif : 22 €/heure + 0,50 – 0,80 €/km (trajet magasin).</li>
+                </ul>
+            </div>
+            <div class="service">
+                <span class="service-icon">🚗</span>
+                <h3>Transport</h3>
+                <p>Je vous accompagne <strong>où vous en avez besoin</strong> (rendez-vous médicaux, coiffeur, famille, courses lointaines).</p>
+                <ul>
+                    <li>Prise en charge à domicile et retour assuré.</li>
+                    <li>Tarif : 0,50 – 0,80 €/km.</li>
+                </ul>
+            </div>
+            <div class="service">
+                <span class="service-icon">🍲</span>
+                <h3>Repas à domicile <span style="color: var(--marron); font-size: 0.8em;">(Bientôt disponible !)</span></h3>
+                <p>Un bon petit plat maison préparé et servi chez vous.</p>
+                <ul>
+                    <li>Adaptés à vos goûts.</li>
+                    <li>Tarif : À venir.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tarifs">
+            <h2>Nos tarifs</h2>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Tarif</th>
+                </tr>
+                <tr>
+                    <td>Courses</td>
+                    <td>22 €/heure + 0,50–0,80 €/km</td>
+                </tr>
+                <tr>
+                    <td>Transport</td>
+                    <td>0,50–0,80 €/km</td>
+                </tr>
+                <tr>
+                    <td>Repas à domicile</td>
+                    <td>Bientôt disponible</td>
+                </tr>
+            </table>
+            <p>✅ Ces services sont éligibles au <strong>crédit d'impôt de 50%</strong> (voir FAQ).</p>
+        </section>
+
+        <section id="faq">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que je paie moins cher grâce au crédit d'impôt ?</div>
+                <div class="faq-answer">
+                    Oui — les services à la personne comme les courses ou le transport ouvrent droit à un crédit d'impôt de 50% : concrètement, vous ne payez au final que la moitié du montant sur votre déclaration de revenus.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Y a-t-il un engagement ou un contrat sur la durée ?</div>
+                <div class="faq-answer">
+                    Non, aucun engagement. Vous pouvez annuler ou modifier vos rendez-vous à tout moment.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Comment se passe le paiement ?</div>
+                <div class="faq-answer">
+                    Le paiement se fait sur place (espèces, chèque) ou par virement bancaire.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je annuler ou déplacer un rendez-vous ?</div>
+                <div class="faq-answer">
+                    Oui, merci de nous prévenir au moins 24h à l'avance pour éviter des frais.
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Une envie, un besoin ? Écrivez-nous, nous répondons rapidement.</p>
+            <div class="form-container">
+                <form action="https://wa.me/33645910971" method="get" target="_blank">
+                    <input type="text" name="body" placeholder="Votre nom *" required>
+                    <input type="tel" name="body" placeholder="Votre téléphone *" required>
+                    <input type="email" name="body" placeholder="Votre email (optionnel)">
+                    <select name="body" required>
+                        <option value="" disabled selected>Service souhaité *</option>
+                        <option value="Courses">🛒 Courses</option>
+                        <option value="Transport">🚗 Transport</option>
+                        <option value="Repas">🍲 Repas à domicile</option>
+                    </select>
+                    <input type="date" name="body" required>
+                    <input type="time" name="body" required>
+                    <textarea name="body" placeholder="Votre demande (ex: 'J'ai besoin de courses pour 2 personnes')" required></textarea>
+                    <button type="submit" class="btn btn-whatsapp">Envoyer sur WhatsApp</button>
+                </form>
+            </div>
+            <p style="margin-top: 20px;">
+                <a href="https://wa.me/33645910971" target="_blank" class="btn btn-whatsapp">💬 Écrire sur WhatsApp</a>
+                <a href="mailto:memeetpepe59@gmail.com" class="btn">✉️ Envoyer un email</a>
+            </p>
+            <h3 style="margin-top: 30px;">Zone d'intervention</h3>
+            <p>Nous intervenons dans un <strong>rayon de 8 km autour de Lezennes</strong> :</p>
+            <ul>
+                <li>Lezennes</li>
+                <li>Lille</li>
+                <li>Hellemmes</li>
+                <li>Villeneuve-d'Ascq</li>
+                <li>Fâches-Thumesnil</li>
+                <li>et alentours</li>
+            </ul>
+            <p><strong>Horaires</strong> : Du lundi au vendredi (sur rendez-vous).</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 Mémé et Pépé aux petits oignons</p>
+        <p><a href="#accueil" style="color: var(--marron);">Retour en haut</a></p>
+    </footer>
+
+    <script>
+        // FAQ interactive
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
