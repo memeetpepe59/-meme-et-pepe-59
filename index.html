@@ -804,3 +804,13 @@ src="https://maps.google.com/maps?q=Lezennes&t=&z=13&ie=UTF8&iwloc=&output=embed
 
 </body>
 </html>
+/* Transformer le curseur en petite main sur tous les éléments cliquables */
+summary, button, a {
+    cursor: pointer;
+}
+
+/* Empêcher la sélection de texte désagréable au clic sur les titres et boutons */
+summary, button, .faq-item {
+    user-select: none;
+    -webkit-user-select: none; /* Pour Safari et téléphones */
+}
