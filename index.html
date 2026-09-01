@@ -803,15 +803,22 @@ src="https://maps.google.com/maps?q=Lezennes&t=&z=13&ie=UTF8&iwloc=&output=embed
 </footer>
   
 <style>
-summary, summary * {
-    cursor: pointer !important;
-    user-select: none !important;
-    -webkit-user-select: none !important;
-}
 
-.faq-answer {
-    user-select: text !important;
-    -webkit-user-select: text !important;
+  /* Supprime le contour et le curseur de texte au clic */
+  *, *::before, *::after {
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  summary, summary *, div, section, img {
+      cursor: pointer !important;
+      user-select: none !important;
+      -webkit-user-select: none !important;
+  }
+
+  .faq-answer {
+      user-select: text !important;
+      -webkit-user-select: text !important;
 }
 </style>
 </body>
