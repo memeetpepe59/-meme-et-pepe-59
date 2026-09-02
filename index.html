@@ -803,13 +803,14 @@ src="https://maps.google.com/maps?q=Lezennes&t=&z=13&ie=UTF8&iwloc=&output=embed
 </footer>
   
 <style>
-  /* Supprime le contour noir/bleu et le curseur texte au clic */
+  /* 1. Supprime le contour/bâton visuel au clic partout */
   *, *::before, *::after {
       outline: none !important;
       -webkit-tap-highlight-color: transparent;
   }
 
-  summary, summary *, div, section, img {
+  /* 2. Petite main uniquement sur la FAQ et les éléments cliquables */
+  summary, summary *, button, a {
       cursor: pointer !important;
   }
 </style>
