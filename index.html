@@ -803,15 +803,24 @@ src="https://maps.google.com/maps?q=Lezennes&t=&z=13&ie=UTF8&iwloc=&output=embed
 </footer>
   
 <style>
-  /* Annule les contours et garde le comportement naturel du navigateur */
+  /* 1. Supprime le contour visuel au clic */
   *, *::before, *::after {
-      outline: 0 !important;
+      outline: none !important;
       -webkit-tap-highlight-color: transparent;
   }
 
-  /* Garde la main sur la FAQ et les boutons */
-  summary, summary *, button, a {
+  /* 2. Désactive la sélection pour éviter le curseur de texte */
+  body, p, h1, h2, h3, h4, span, div, section, img {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      cursor: default !important;
+  }
+
+  /* 3. Garde la petite main sur les boutons, liens et la FAQ */
+  summary, summary *, button, a, .btn {
       cursor: pointer !important;
+      user-select: none !important;
+      -webkit-user-select: none !important;
   }
 </style>
 </body>
